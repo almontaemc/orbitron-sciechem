@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: var(--font-montserrat);
+  --font-sans: var(--font-inter);
+
+  --color-navy-950: #00112E;
+  --color-navy-900: #001A4A;
+  --color-navy-800: #002B6E;
+  --color-navy-700: #003d8f;
+
+  --color-acc-300: #fcc18a;
+  --color-acc-400: #f9a250;
+  --color-acc-500: #F58220;
+  --color-acc-600: #e06b00;
+}
+
+@keyframes float-up {
+  0%   { transform: translateY(0)      scale(0.85); opacity: 0; }
+  15%  { opacity: 0.5; }
+  80%  { opacity: 0.25; }
+  100% { transform: translateY(-120px) scale(1.1);  opacity: 0; }
+}
+
+@keyframes fade-in-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes bar-grow {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* ── Preloader animations ── */
+@keyframes orb-cw  { to { transform: rotate(360deg);  } }
+@keyframes orb-ccw { to { transform: rotate(-360deg); } }
+
+@keyframes logo-pop {
+  0%   { transform: scale(0.4); opacity: 0; filter: brightness(2) blur(4px); }
+  60%  { transform: scale(1.07); opacity: 1; filter: brightness(1) blur(0); }
+  100% { transform: scale(1);    opacity: 1; filter: brightness(1) blur(0); }
+}
+
+@keyframes fade-up {
+  from { transform: translateY(14px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes bar-fill {
+  from { width: 0%;   opacity: 0.4; }
+  to   { width: 100%; opacity: 1;   }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 10px 2px rgba(245,130,32,0.6); }
+  50%       { box-shadow: 0 0 22px 6px rgba(245,130,32,1);   }
+}
+
+@keyframes chat-slide-up {
+  from { transform: translateY(20px) scale(0.95); opacity: 0; }
+  to   { transform: translateY(0)    scale(1);    opacity: 1; }
+}
+
+.animate-float-up   { animation: float-up  3s ease-in-out infinite; }
+.animate-fade-in-up { animation: fade-in-up 0.7s ease both; }
+.animate-chat-slide { animation: chat-slide-up 0.25s ease both; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans, system-ui, sans-serif);
+  color: #111827;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading, system-ui, sans-serif);
+}

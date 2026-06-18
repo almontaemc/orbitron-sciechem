@@ -62,9 +62,15 @@
   to   { transform: translateY(0)    scale(1);    opacity: 1; }
 }
 
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 .animate-float-up   { animation: float-up  3s ease-in-out infinite; }
 .animate-fade-in-up { animation: fade-in-up 0.7s ease both; }
 .animate-chat-slide { animation: chat-slide-up 0.25s ease both; }
+.animate-marquee    { animation: marquee 24s linear infinite; }
 
 html { scroll-behavior: smooth; }
 
